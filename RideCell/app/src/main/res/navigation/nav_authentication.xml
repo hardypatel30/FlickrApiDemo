@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" app:startDestination="@id/searchFragment"
+        tools:ignore="UnusedNavigation">
+    <fragment
+            android:id="@+id/searchFragment"
+            android:name="com.example.ridecellpracticaldemo.fragments.SearchFragment"
+            android:label="fragment_blank"
+
+    >
+        <action
+                android:id="@+id/actionphotoListFragment"
+                app:destination="@id/photoListingFragment"
+        />
+
+
+    </fragment>
+    <fragment
+            android:id="@+id/photoListingFragment"
+            android:name="com.example.ridecellpracticaldemo.fragments.ListMainPhotosFragment"
+            android:label="fragment_blank_fragment2"
+
+    >
+        <action
+                android:id="@+id/actionPhotoDetailFragment"
+                app:destination="@id/photosDetailFragment"
+        />
+
+        <action
+                android:id="@+id/actionSearchFragment"
+                app:destination="@id/searchFragment"
+        />
+
+
+    </fragment>
+    <fragment
+            android:id="@+id/photosDetailFragment"
+            android:name="com.example.ridecellpracticaldemo.fragments.PhotosDetailFragment"
+            android:label="fragment_blank_fragment2"
+
+    >
+        <action
+                android:id="@+id/actionPhotoListFragmentD"
+                app:destination="@id/photoListingFragment"
+        />
+        <argument
+                android:name="photoId"
+                app:argType="string"/>
+        <argument
+                android:name="photoUrl"
+                app:argType="string"/>
+
+    </fragment>
+
+</navigation>

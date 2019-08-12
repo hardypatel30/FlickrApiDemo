@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="model" type="com.example.ridecellpracticaldemo.responsemodels.PhotoDetailResponse"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+    >
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/design_default_color_primary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+
+            <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/photo_detail"
+                    android:textColor="@android:color/white"
+                    android:textAppearance="?android:textAppearanceLarge"
+            />
+
+            <TextView
+                    android:id="@+id/txtSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    app:layout_constraintRight_toRightOf="parent"
+
+                    android:textAppearance="?android:textAppearanceLarge"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+            />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView android:id="@+id/imgMainPhoto"
+                   android:layout_width="match_parent"
+                   android:layout_height="300dp"
+                   android:scaleType="fitXY"
+                   app:detailImage="@{model.photoUrl}"
+                   app:layout_constraintTop_toBottomOf="@id/headerLayout"
+                   app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTitlep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title : "
+                android:paddingLeft="20dp"
+                app:layout_constraintTop_toBottomOf="@id/imgMainPhoto"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTitleValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.title}"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintLeft_toRightOf="@id/txtTitlep"
+                app:layout_constraintTop_toTopOf="@id/txtTitlep"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:text="Author Name : "
+                app:layout_constraintLeft_toLeftOf="@id/txtTitlep"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitlep"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDetailValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.autherName}"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintLeft_toRightOf="@id/txtDetail"
+                app:layout_constraintTop_toTopOf="@id/txtDetail"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

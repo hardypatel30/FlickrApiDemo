@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RideCellPracticalDemo</string>
+    <string name="done">Done</string>
+    <string name="main_photos">Main List of Photos</string>
+    <string name="photo_detail">Photo Detail</string>
+    <string name="search">Search Tag</string>
+</resources>

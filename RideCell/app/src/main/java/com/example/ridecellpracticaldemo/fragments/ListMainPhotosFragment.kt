@@ -8,7 +8,7 @@ import android.widget.CompoundButton
 import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import androidx.recyclerview.widget.DividerItemDecoration
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -98,14 +98,12 @@ class ListMainPhotosFragment : Fragment() {
                         helper.attachToRecyclerView(it.rclMainListPhotos)
                         var layoutmanagerVertical = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                         it.rclMainListPhotos.layoutManager = layoutmanagerVertical
-                        val itemDecor = DividerItemDecoration(context, LinearLayoutManager.HORIZONTAL)
-                        it.rclMainListPhotos.addItemDecoration(itemDecor)
+
                         it.rclMainListPhotos.adapter = adapterHorizontal
 
                     } else {
                         it.rclMainListPhotos.layoutManager = layoutmanager
-                        val itemDecor = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
-                        it.rclMainListPhotos.addItemDecoration(itemDecor)
+
                         it.rclMainListPhotos.adapter = adapterVertical
                     }
                 }
